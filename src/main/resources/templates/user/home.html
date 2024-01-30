@@ -6,26 +6,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <button><a th:href="@{/todolist/crear}">Añadir</a></button>
+    <button class=".btn"><a th:href="@{/todolist/crear}">Añadir</a></button>
     <table>
     <thead>
         <tr>
-            <th scope="col" style="border:1px solid black;">Nombre</th>
-            <th scope="col" style="border:1px solid black;">Description</th>
-            <th scope="col" style="border:1px solid black;">Deadline</th>
-            <th scope="col" style="border:1px solid black;">Priority</th>
-            <th scope="col" style="border:1px solid black;">Edit</th>
-            <th scope="col" style="border:1px solid black;">Delete</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Description</th>
+            <th scope="col">Deadline</th>
+            <th scope="col">Priority</th>
+            <th scope="col">Edit</th>
+            <th scope="col">Delete</th>
         </tr>
     </thead>
     <tbody>
         <tr th:each="task:${tasks}" >
-            <td th:text="${task.name}" style="border:1px solid black;"></td>
-            <td th:text="${task.description}" style="border:1px solid black;"></td>
-            <td th:text="${task.deadline}" style="border:1px solid black;"></td>
-            <td th:text="${task.priority}" style="border:1px solid black;"></td>
-            <td style="border:1px solid black;"><a th:href="@{/todolist/edit/{id} (id=${task.id})}"><i class="fa-regular fa-pen-to-square"></i></a></td>
-            <td style="border:1px solid black;"><a th:href="@{/todolist/delete/{id} (id=${task.id})}"><i class="fa-solid fa-trash"></i></a></td>
+            <td th:text="${task.name}"></td>
+            <td th:text="${task.description}"></td>
+            <td th:text="${task.deadline}"></td>
+            <td th:text="${task.priority}"></td>
+            <td><a th:href="@{/todolist/edit/{id} (id=${task.id})}"><i class="fa-regular fa-pen-to-square"></i></a></td>
+            <td><a th:href="@{/todolist/delete/{id} (id=${task.id})}"><i class="fa-solid fa-trash"></i></a></td>
         </tr>
     </tbody>
     </table>

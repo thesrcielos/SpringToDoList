@@ -1,35 +1,41 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
+<html xmlns:th="http://www.thymeleaf.org"></html>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" th:href="@{styles1.css}">
 </head>
 <body>
-<h2>Formulario de Tarea</h2>
-
-<form th:action="@{/todolist/save}" method="post">
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="name" required>
-
+<div class="form">
+    <h2>Formulario de Tarea</h2>
     <br>
+    <form th:action="@{/todolist/save}" method="post">
+        <label for="nombre">Name</label>
+        <br>
+        <input type="text" id="nombre" name="name" required>
 
-    <label for="descripcion">Descripción:</label>
-    <textarea id="descripcion" name="description" rows="4" required></textarea>
+        <br>
 
-    <br>
+        <label for="descripcion">Description</label>
+        <br>
+        <textarea id="descripcion" name="description" rows="4" required></textarea>
 
-    <label for="fecha_limite">Fecha Límite:</label>
-    <input type="date" id="fecha_limite" name="deadline" required>
+        <br>
 
-    <br>
+        <label for="fecha_limite">DeadLine</label>
+        <br>
+        <input type="date" id="fecha_limite" name="deadline" required>
 
-    <label>Prioridad:</label>
-    <input type="number" name="priority" value="0" required>
+        <br>
 
-    <br><br>
+        <label>Priority</label>
+        <br>
+        <input type="number" name="priority" value="0" required>
 
-    <input type="submit" value="Guardar Tarea">
-</form>
+        <br><br>
+
+        <input type="submit" value="Guardar Tarea" class="btn">
+    </form>
+</div>
 
 </body>
 </html>
